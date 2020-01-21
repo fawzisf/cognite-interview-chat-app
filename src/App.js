@@ -5,6 +5,7 @@ import {UserDropdown} from "./components/UserDropdown";
 import logo from './logo.svg';
 import {FriendsList} from "./components/FriendsList";
 import {ChatPanel} from "./components/ChatPanel";
+import {CurrentUser} from "./data/user";
 
 const {Header, Content, Footer} = Layout;
 
@@ -21,7 +22,7 @@ function App() {
 
                     <Col offset={18} span={2}>
                         <Dropdown overlay={UserDropdown}>
-                            <div className="ant-dropdown-link" >
+                            <div className="ant-dropdown-link">
                                 <Avatar
                                     style={{
                                         backgroundColor: '#001529',
@@ -29,7 +30,7 @@ function App() {
                                     }}
                                     size="large"
                                 >
-                                    EC
+                                    {CurrentUser.initials}
                                 </Avatar>
                             </div>
                         </Dropdown>

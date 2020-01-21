@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Avatar, List, Empty} from "antd";
 import {MessageEditor} from "./MessageEditor";
+import {CurrentUser} from "../data/user";
 
 
 export const ChatPanel = ({user}) => {
@@ -9,6 +10,10 @@ export const ChatPanel = ({user}) => {
     useEffect(() => {
         setMessages([]);
     }, [user]);
+
+    const onAddMessage = (value) => {
+        setMessages([...messages, {id: messages.length, message: value, sender: CurrentUser}]);
+    };
 
     return (
         <div style={{border: "1px solid #e8e8e8",}}>
@@ -22,17 +27,14 @@ export const ChatPanel = ({user}) => {
                                   dataSource={messages}
                                   renderItem={item => <List.Item>
                                       <List.Item.Meta
-                                          avatar={<Avatar>EC</Avatar>}
-                                          title={<a href="https://ant.design">{"Evan"}</a>}
+                                          avatar={<Avatar>{item.sender.initials}</Avatar>}
+                                          title={<div>{item.sender.name}</div>}
                                           description={item.message}
                                       />
                                   </List.Item>}
                             />
                         </div>
-                        <MessageEditor onAddMessage={(v) => {
-                            setMessages([...messages, {id: messages.length, message: v}]);
-                        }
-                        }/>
+                        <MessageEditor onAddMessage={onAddMessage}/>
                     </>
                     :
                     <h1 style={{textAlign: "center", padding: 12}}>
