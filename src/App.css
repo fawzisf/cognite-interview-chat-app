@@ -54,3 +54,6 @@
 .friends-selected{
   background: #e0e0e0;
 }
+.ant-dropdown-link{
+  cursor: pointer;
+}

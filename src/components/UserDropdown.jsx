@@ -4,11 +4,11 @@ import React from 'react';
 export const UserDropdown = (
     <Menu>
         <Menu.Item style={{padding: '5px 20px'}}>
-            <a href="#" onClick={() => {
+            <div onClick={() => {
             }}>
                 <Icon type="logout"/>
                 Logout
-            </a>
+            </div>
         </Menu.Item>
     </Menu>
 );

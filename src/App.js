@@ -21,7 +21,7 @@ function App() {
 
                     <Col offset={18} span={2}>
                         <Dropdown overlay={UserDropdown}>
-                            <a className="ant-dropdown-link" href="#">
+                            <div className="ant-dropdown-link" >
                                 <Avatar
                                     style={{
                                         backgroundColor: '#001529',
@@ -31,7 +31,7 @@ function App() {
                                 >
                                     EC
                                 </Avatar>
-                            </a>
+                            </div>
                         </Dropdown>
                     </Col>
                 </Row>
