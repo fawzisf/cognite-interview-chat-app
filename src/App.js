@@ -19,7 +19,7 @@ function App() {
                         <img width={"100%"} src={logo}/>
                     </Col>
 
-                    <Col offset={16} span={2}>
+                    <Col offset={18} span={2}>
                         <Dropdown overlay={UserDropdown}>
                             <a className="ant-dropdown-link" href="#">
                                 <Avatar
