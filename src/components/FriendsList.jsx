@@ -26,14 +26,13 @@ export const FriendsList = ({selectedUser, onChangeUser}) => {
     return (
         <List
             size="large"
-            // header={<div>Header</div>}
-            // footer={<div>Footer</div>}
             bordered
             dataSource={friends}
             renderItem={item => <List.Item onClick={() => {
                 onChangeUser(item)
-            }}
-                                           className={`friends-item ${selectedUser && selectedUser.id === item.id && "friends-selected"}`}>{item.name}</List.Item>}
+            }} className={`friends-item ${selectedUser && selectedUser.id === item.id && "friends-selected"}`}>
+                {item.name}
+            </List.Item>}
         />
     )
 };

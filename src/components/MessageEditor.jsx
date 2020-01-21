@@ -28,4 +28,4 @@ export const MessageEditor = ({onAddMessage}) => {
             </Form.Item>
         </div>
     )
-}
+};

@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Layout, Menu, Icon, Row, Col, Dropdown, Avatar} from 'antd';
+import {Avatar, Col, Dropdown, Layout, Row} from 'antd';
 import {UserDropdown} from "./components/UserDropdown";
 import logo from './logo.svg';
 import {FriendsList} from "./components/FriendsList";
 import {ChatPanel} from "./components/ChatPanel";
 
-const {Header, Content, Footer, Sider} = Layout;
+const {Header, Content, Footer} = Layout;
 
 function App() {
     const [selectedUser, setSelectedUser] = useState(null);
@@ -16,7 +16,7 @@ function App() {
 
                 <Row>
                     <Col span={4}>
-                        <img width={"100%"} src={logo}/>
+                        <img alt={"Cognite Logo"} width={"100%"} src={logo}/>
                     </Col>
 
                     <Col offset={18} span={2}>
