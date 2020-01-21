@@ -23,6 +23,7 @@ export const MessageEditor = ({onAddMessage}) => {
         <div style={{padding: 10}}>
             <Form.Item>
                 <Input.TextArea
+                    data-testid="chat-input"
                     placeholder={"Type Your message here"}
                     onKeyDown={onInputKeyDown}
                     rows={4}
