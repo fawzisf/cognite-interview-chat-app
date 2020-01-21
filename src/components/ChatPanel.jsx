@@ -15,7 +15,7 @@ export const ChatPanel = ({user}) => {
             {
                 user ?
                     <>
-                        <h1>Chatting to {user.name}</h1>
+                        <h1 style={{padding:10}}>Chatting to {user.name}</h1>
                         <div style={{minHeight: 200, padding: 20}}>
                             <List locale={{ emptyText: <Empty description={"No messages yet, start chatting now."}/> }}
 
@@ -42,7 +42,7 @@ export const ChatPanel = ({user}) => {
                         }/>
                     </>
                     :
-                    <h1 style={{textAlign: "center",}}>
+                    <h1 style={{textAlign: "center",padding:12}}>
                         Pick A USER TO START CHATTING
                     </h1>
 
