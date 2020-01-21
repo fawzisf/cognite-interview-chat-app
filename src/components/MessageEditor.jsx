@@ -5,15 +5,25 @@ export const MessageEditor = ({onAddMessage}) => {
     const [value, onChangeValue] = useState("");
     const onSubmit = () => {
         onAddMessage(value);
+        onChangeValue("");
     };
     return (
-        <div style={{padding:10}}>
+        <div style={{padding: 10}}>
             <Form.Item>
-                <Input.TextArea rows={4} onChange={e=>{onChangeValue(e.target.value)}} value={value}/>
+                <Input.TextArea placeholder={"Type Your message here"} onKeyDown={(e) => {
+
+                    if (e.keyCode === 13) {
+                        e.preventDefault();
+                        onSubmit();
+                    }
+                }} rows={4} onChange={e => {
+
+                    onChangeValue(e.target.value)
+                }} value={value}/>
             </Form.Item>
             <Form.Item>
                 <Button htmlType="submit" onClick={onSubmit} type="primary">
-                   Send Message
+                    Send Message
                 </Button>
             </Form.Item>
         </div>
