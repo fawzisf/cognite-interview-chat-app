@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Avatar, List} from "antd";
+import {Avatar, List,Empty} from "antd";
 import {MessageEditor} from "./MessageEditor";
 
 
@@ -17,7 +17,8 @@ export const ChatPanel = ({user}) => {
                     <>
                         <h1>Chatting to {user.name}</h1>
                         <div style={{minHeight: 200, padding: 20}}>
-                            <List
+                            <List locale={{ emptyText: <Empty description={"No messages yet, start chatting now."}/> }}
+
 
                                 size="small"
                                 // header={<div>Header</div>}
