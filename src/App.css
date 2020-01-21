@@ -39,3 +39,18 @@
     transform: rotate(360deg);
   }
 }
+
+.ant-layout-footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.friends-item{
+  cursor: pointer;
+}
+.friends-item:hover{
+  background: #e0e0e0;
+}
+.friends-selected{
+  background: #e0e0e0;
+}
