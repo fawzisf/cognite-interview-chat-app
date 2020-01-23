@@ -1,15 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, Form, Input} from "antd";
+import useLocalStorage from "../hooks/useLocalStorage";
 
-export const MessageEditor = ({onAddMessage}) => {
-    const [value, onChangeValue] = useState("");
+export const MessageEditor = ({onAddMessage, receiver}) => {
+    const [value, setValue] = useLocalStorage("drafts", {});
     const onSubmit = () => {
         onAddMessage(value);
-        onChangeValue("");
+        setValue("");
     };
+    // useEffect(() => {
+    //     setValue("");
+    // }, [receiver]);
 
     const onChangeInput = (e) => {
-        onChangeValue(e.target.value)
+        let newValue = {...value};
+        newValue[receiver.id] = e.target.value;
+        setValue(newValue);
     };
 
     const onInputKeyDown = (e) => {
@@ -28,7 +34,7 @@ export const MessageEditor = ({onAddMessage}) => {
                     onKeyDown={onInputKeyDown}
                     rows={4}
                     onChange={onChangeInput}
-                    value={value}/>
+                    value={value[receiver.id] || ""}/>
             </Form.Item>
             <Form.Item>
                 <Button htmlType="submit" onClick={onSubmit} type="primary">

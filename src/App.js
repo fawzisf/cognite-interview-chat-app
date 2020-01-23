@@ -43,7 +43,15 @@ function App() {
                         <FriendsList onChangeUser={setSelectedUser} selectedUser={selectedUser}/>
                     </Col>
                     <Col span={16}>
-                        <ChatPanel user={selectedUser}/>
+                        {
+                            selectedUser ?
+                                <ChatPanel user={selectedUser}/>
+                                :
+                                <h1 style={{textAlign: "center", padding: 12}}>
+                                    Pick A USER TO START CHATTING
+                                </h1>
+                        }
+
                     </Col>
                 </Row>
             </Content>
